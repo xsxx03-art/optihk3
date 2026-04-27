@@ -1,0 +1,322 @@
+/* ========== Team Section  ========== */
+.pixova-team-section {
+    background-color: #fff;
+    padding: 4em 0;
+}
+.pixova-team-section .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.pixova-team-section h2.major {
+    text-align: center;
+    color: #222533;
+    border-bottom: none;
+    margin-bottom: 0.5em;
+    font-size: 2.4em;
+}
+.pixova-team-section p {
+    text-align: center;
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 3em;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-weight: 520;
+}
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Team Member Card Base Style (Initially Completely Hidden) */
+.pixova-team {
+    border-radius: 4px;
+    display: inline-block;
+    height: auto;
+    padding: 0 15px 40px 15px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: calc(25% - 30px);
+    min-width: 220px;
+    transition: all 0.2s ease;
+    opacity: 0;              /* Key: initially invisible */
+    transform: translateX(0); /* No offset, moves only during animation */
+    visibility: visible;      /* Ensure normal visibility */
+}
+
+/* avatar */
+.pixova-team-img {
+    transition: all 0.4s cubic-bezier(0.805, 0.075, 0.315, 1.41);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    max-width: 138px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.pixova-team-image:hover .pixova-team-img {
+    transform: scale(0.9);
+    opacity: 0.75;
+}
+
+.pixova-team-image {
+    position: relative;  
+}
+
+
+/* Social media link*/
+.pixova-team-description {
+    transition: all 0.35s ease;
+    background: #363636;
+    left: 50%;
+    margin-top: 0;
+    opacity: 0;
+    padding: 8px 0;
+    position: absolute;
+    visibility: hidden;
+    width: 70%;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    z-index: 9;
+    bottom: auto;
+    top: 90%;                 /* overlay position down */
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+/* Triangle arrow pointing up */
+.pixova-team-description:before {
+    border-bottom: none;
+    border-top: 6px solid #363636;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    content: '';
+    height: 0;
+    left: 50%;
+    margin-left: -3px;
+    position: absolute;
+    top: -6px;
+    width: 0;
+}
+
+.pixova-team-member-icon {
+    display: inline-block;
+    padding-right: 12px;
+    text-align: center;
+    width: 25%;
+}
+.pixova-team-member-icon a {
+    color: #fff;
+    font-size: 17px;                
+    text-decoration: none;
+    display: inline-block;          
+    transition: all 0.2s ease;
+}
+.pixova-team-member-icon a:hover {
+    transform: scale(1.2);          
+    color: #f2c351 !important;      
+
+}
+.pixova-team-member-name {
+    font-weight: 600;
+    position: relative;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: #2b2b2b;
+    margin-top: 5px;
+}
+.pixova-team-member-description {
+    color: #f8b51a;
+    font-size: 17px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+.pixova-team-image:hover .pixova-team-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Scroll-triggered animation (activated via .animated class) */
+.pixova-team.animated {
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+/* First half of members slide in from the left */
+.pixova-team.animated:nth-child(-n+4) {
+    animation-name: slideFromLeft;
+}
+/* Second half of members slide in from the right */
+.pixova-team.animated:nth-child(n+5) {
+    animation-name: slideFromRight;
+}
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .pixova-team {
+        width: calc(33.333% - 30px);
+    }
+}
+@media screen and (max-width: 768px) {
+    .pixova-team-section {
+        padding: 3em 0;
+    }
+    .pixova-team {
+        width: calc(50% - 30px);
+    }
+}
+@media screen and (max-width: 480px) {
+    .pixova-team {
+        width: calc(100% - 30px);
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .pixova-team-description {
+        width: 85%;
+    }
+    .pixova-team-member-icon {
+        width: 33%;
+        padding-right: 8px;
+    }
+}
+
+.pixova-team-img {
+    width: auto;
+    height: 180px;              
+    max-width: 100%;
+    object-fit: cover;          
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.805, 0.075, 0.315, 1.41);
+    display: block;
+    margin: 0 auto;
+}
+
+
+.pixova-team-image {
+    position: relative;
+    margin-bottom: 20px;       
+    text-align: center;
+}
+
+
+.pixova-team-description {
+    top: 85%;                   
+    
+}
+
+
+.team-grid {
+    gap: 40px;                  
+}
+.pixova-team {
+    width: calc(25% - 40px);    
+    min-width: 240px;          
+}
+
+
+.pixova-team-section .inner {
+    max-width: 1400px;         
+    padding: 0 2em;           
+}
+
+
+@media screen and (max-width: 1024px) {
+    .pixova-team {
+        width: calc(33.333% - 40px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .pixova-team-img {
+        height: 140px;
+    }
+    .pixova-team-image {
+        margin-bottom: 15px;
+    }
+    .pixova-team-description {
+        top: 82%;
+    }
+    .team-grid {
+        gap: 30px;
+    }
+    .pixova-team {
+        width: calc(50% - 30px);
+        min-width: 200px;
+    }
+    .pixova-team-section .inner {
+        padding: 0 1.5em;      
+    }
+}
+
+@media screen and (max-width: 480px) {
+   
+    .pixova-team-img {
+        height: 120px;
+    }
+    .pixova-team-description {
+        top: 88%;
+    }
+    .pixova-team {
+        width: calc(100% - 30px);
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .team-grid {
+        gap: 30px;
+    }
+    .pixova-team-section .inner {
+        padding: 0 1em;
+    }
+}
+
+
+
+#team.wrapper {
+    margin-top: 0 !important;
+}
+
+#header.alt {
+    background-color: rgba(46, 49, 65, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+#team.wrapper .inner {
+    padding-top: 4em;
+}
+
+@media screen and (max-width: 736px) {
+    #team.wrapper .inner {
+        padding-top: 2em;
+    }
+}

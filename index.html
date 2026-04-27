@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>OptiHK</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <style>
+        /* ========== banner gallery ========== */
+        #banner {
+            position: relative;
+            overflow: hidden;
+            background-color: #4c5c96;
+        }
+
+        
+
+        /* arrow button */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;          
+            backdrop-filter: none;   
+            color: #fff;
+            border: none;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 38px;
+            height: 38px;
+            border-radius: 100px;
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: monospace;
+            line-height: 1;
+            box-shadow: none;                 
+    
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(76, 92, 150, 0.85);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .carousel-arrow.prev {
+            left: 20px;
+        }
+
+        .carousel-arrow.next {
+            right: 20px;
+        }
+
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 20%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .carousel-dots li {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-dots li.active {
+            background-color: #ffffff;
+            transform: scale(1.2);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+        }
+
+
+        @media screen and (max-width: 736px) {
+            .carousel-arrow {
+                width: 36px;
+                height: 36px;
+                font-size: 1.4rem;
+            }
+
+            .carousel-arrow.prev {
+                left: 10px;
+            }
+
+            .carousel-arrow.next {
+                right: 10px;
+            }
+
+            .carousel-dots {
+                bottom: 50x;
+                gap: 8px;
+            }
+
+            .carousel-dots li {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+
+
+
+
+        /* #banner h2,
+        #banner p {
+            transition: opacity 0.25s ease-in-out;
+        }*/
+
+
+        .fade-text {
+            opacity: 0 !important;
+        }
+
+
+
+
+        
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1>
+                <a href="index.html">
+                    <img src="./images/navbar_logo.png" OptiHK Logo" class="header-logo">
+                </a>
+            </h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <span class="nav-separator">|</span>
+                <a href="gallery.html">Gallery</a>
+                <span class="nav-separator">|</span>
+                <a href="Technology.html">Technology</a>
+                <span class="nav-separator">|</span>
+                <a href="Products.html">Products</a>
+                <span class="nav-separator">|</span>
+                <a href="team.html">Team</a>
+            </nav>
+            <a href="#menu" class="menu-toggle">☰</a>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="Technology.html">Technology</a></li>
+                    <li> <a href="Products.html">Products</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <section id="banner">
+            <div class="inner">
+                <h2 id="dynamic-title">
+                    <span class="blue-gradient">C</span>o-<span class="blue-gradient">P</span>ackaged <span class="blue-gradient">O</span>ptics for AI interconnect
+                  </h2>
+                <p id="dynamic-desc">A silicon photonic technology company on a mission to estabulish scalable solutions to xPU interconnect and medic sensing.</p>
+            </div>
+
+
+            <button class="carousel-arrow prev" aria-label="next">&#10094;</button>
+            <button class="carousel-arrow next" aria-label="previous">&#10095;</button>
+
+
+            <ul class="carousel-dots" id="carousel-dots"></ul>
+
+    </div>
+    </section>
+
+
+
+    <!-- concept section -->
+    <section class="wrapper-concept" id="why-optics">
+        <div class="inner">
+            <h2 class="major">Why OptiHK?</h2>
+            <p></p>
+    
+            <div class="concepts-grid">
+                <!-- Photonic Engine -->
+                <div class="concept-card">
+                    <div class="concept-image">
+                        <img src="images/concepts/Photonic_Engine.png" alt="Photonic Engine">
+                    </div>
+                    <h3>Photonic Engine</h3>
+                    <p>Photonic Engine Introduction</p>
+                </div>
+    
+                <!-- Low Loss Interface -->
+                <div class="concept-card">
+                    <div class="concept-image">
+                        <img src="images/concepts/Low_Loss_Interface.png" alt="Low Loss Interface">
+                    </div>
+                    <h3>Low Loss Interface</h3>
+                    <p>Low Loss Interface Introduction</p>
+                </div>
+    
+                <!-- Wavelength Multiplexing -->
+                <div class="concept-card">
+                    <div class="concept-image">
+                        <img src="images/concepts/Wavelength_Multiplexing.png" alt="Wavelength Multiplexing">
+                    </div>
+                    <h3>Wavelength Multiplexing</h3>
+                    <p>Wavelength Multiplexing Introduction</p>
+                </div>
+    
+                <!-- Advanced Packaging -->
+                <div class="concept-card">
+                    <div class="concept-image">
+                        <img src="images/concepts/Advanced_Packaging.png" alt="Advanced Packaging">
+                    </div>
+                    <h3>Advanced Packaging</h3>
+                    <p>Advanced Packaging Introduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+     
+
+
+
+
+        <section id="footer">
+            <div class="inner">
+                <h2 class="major">Get in touch</h2>
+
+
+                <!-- map -->
+                <div class="map-wrapper">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.047704377774!2d114.20576267589978!3d22.427230238281442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34040890c6e5ba1d%3A0x229fd5a68b3f0244!2z5rKZ55Sw56eR5oqA5aSn6YGT6KW_MTnomZ9Vbml0IDEwMTUgYnVpbGRpbmcgMTlX!5e0!3m2!1szh-TW!2shk!4v1774511032604!5m2!1szh-TW!2shk"
+                        width="100%" height="500" style="border:0; border-radius: 5px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="contact-two-columns">
+
+                    <ul class="contact contact-left">
+                        <li class="icon solid fa-home">
+                            Unit 1015 building 19W,<br />
+                            19 Science Park West Avenue,<br />
+                            Pak Shek Kok, N.T.,, Hong Kong
+                        </li>
+                        <li class="icon solid fa-phone">(000) 000-0000</li>
+                        <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+                    </ul>
+
+
+                    <ul class="contact contact-right">
+                        <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+                        <li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+                        <li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+                    </ul>
+                </div>
+
+
+                <ul class="copyright">
+                    <li>Copyright © 2026 OptiHK. All Rights Reserved.</li>
+
+                </ul>
+            </div>
+        </section>
+
+
+
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+
+     
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var teamSection = document.getElementById('team');
+                if (!teamSection) return;
+                var teamMembers = document.querySelectorAll('#team .pixova-team');
+                if (teamMembers.length === 0) return;
+
+                var observer = null;
+
+
+                function getThreshold() {
+                    var width = window.innerWidth;
+                    if (width <= 480) return 0.1;      // phone
+                    if (width <= 768) return 0.2;      // pad
+                    return 0.6;                         // desktop
+                }
+
+                setTimeout(function () {
+                    var teamMembers = document.querySelectorAll('#team .pixova-team');
+                    var anyAnimated = Array.from(teamMembers).some(m => m.classList.contains('animated'));
+                    if (!anyAnimated && teamMembers.length) {
+
+                        teamMembers.forEach(function (member) {
+                            member.classList.add('animated');
+                        });
+                        if (observer) observer.disconnect();
+                    }
+                }, 7500);
+
+                function initObserver() {
+                    if (observer) observer.disconnect();
+                    var threshold = getThreshold();
+                    observer = new IntersectionObserver(function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                teamMembers.forEach(function (member) {
+                                    member.classList.add('animated');
+                                });
+                                observer.unobserve(teamSection);
+                            }
+                        });
+                    }, { threshold: threshold });
+                    observer.observe(teamSection);
+                }
+
+                initObserver();
+
+                window.addEventListener('resize', initObserver);
+            });
+        </script>
+
+
+
+        <!-- gallery function -->
+        <script>
+            (function () {
+
+                const slidesData = [
+
+
+                    {
+                        bgImage: "images/banner/DSC_2979.webp",
+                        title: "Building the future of computing",
+                        desc: "A quantum technology company on a mission to build and deploy the world's leading integrated photonic solutions."
+                    },
+                    {
+                        bgImage: "images/banner/DSC_2976.webp",
+                        title: "BBBBBBBBBBBBBBBBBBBBBBB",
+                        desc: "A quantum technology company on a mission to build and deploy the world's leading integrated photonic solutions."
+                    },
+                    {
+                        bgImage: "images/banner/DSC_3024.webp",
+                        title: "CCCCCCCCCCCCCCCCC",
+                        desc: "A quantum technology company on a mission to build and deploy the world's leading integrated photonic solutions."
+                    },
+                    {
+                        bgImage: "images/banner/DSC_3067.webp",
+                        title: "DDDDDDDDDDDDDDDDDDDD",
+                        desc: "A quantum technology company on a mission to build and deploy the world's leading integrated photonic solutions."
+                    }
+                ];
+
+
+                function preloadGalleryImages() {
+                    slidesData.forEach(slide => {
+                        const img = new Image();
+                        img.src = slide.bgImage;
+                    });
+                }
+
+
+
+                let currentIndex = 0;
+                const $banner = document.getElementById('banner');
+                const $title = document.getElementById('dynamic-title');
+                const $desc = document.getElementById('dynamic-desc');
+                const $prevBtn = document.querySelector('.carousel-arrow.prev');
+                const $nextBtn = document.querySelector('.carousel-arrow.next');
+                const $dotsContainer = document.getElementById('carousel-dots');
+
+                let autoTimer = null;
+                let isTransitioning = false;
+
+
+                function updateSlide(index, direction = 'next') {
+                    if (isTransitioning) return;
+                    if (index < 0) index = slidesData.length - 1;
+                    if (index >= slidesData.length) index = 0;
+                    if (index === currentIndex && !direction) return;
+
+                    isTransitioning = true;
+                    const slide = slidesData[index];
+
+
+                    if ($title && $desc) {
+                        $title.style.opacity = '0';
+                        $desc.style.opacity = '0';
+                    }
+
+
+                    const gradientOverlay = "linear-gradient(to top, rgba(46, 49, 65, 0.7), rgba(46, 49, 65, 0.0))";
+                    const newBgImage = `url("${slide.bgImage}")`;
+
+                    $banner.style.setProperty('background-image', `${gradientOverlay}, ${newBgImage}`, 'important');
+                    $banner.style.setProperty('background-size', 'auto, cover', 'important');
+                    $banner.style.setProperty('background-position', 'center, center', 'important');
+                    $banner.style.setProperty('background-repeat', 'no-repeat, no-repeat', 'important');
+                    $banner.style.setProperty('background-attachment', 'scroll', 'important');
+
+                    // gallery title
+                    //if ($title) $title.textContent = slide.title;
+                    //if ($desc) $desc.textContent = slide.desc;
+
+
+                    updateDotsActive(index);
+
+
+                    setTimeout(() => {
+                        if ($title) $title.style.opacity = '1';
+                        if ($desc) $desc.style.opacity = '1';
+                        currentIndex = index;
+                        isTransitioning = false;
+                    }, 200);
+                }
+
+
+                function buildDots() {
+                    if (!$dotsContainer) return;
+                    $dotsContainer.innerHTML = '';
+                    slidesData.forEach((_, idx) => {
+                        const dot = document.createElement('li');
+                        dot.setAttribute('data-index', idx);
+                        dot.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            if (idx === currentIndex || isTransitioning) return;
+                            updateSlide(idx);
+                            resetAutoTimer();
+                        });
+                        $dotsContainer.appendChild(dot);
+                    });
+                    updateDotsActive(0);
+                }
+
+                function updateDotsActive(activeIdx) {
+                    if (!$dotsContainer) return;
+                    const dots = $dotsContainer.querySelectorAll('li');
+                    dots.forEach((dot, i) => {
+                        if (i === activeIdx) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
+
+
+                function nextSlide() {
+                    if (isTransitioning) return;
+                    let newIndex = currentIndex + 1;
+                    if (newIndex >= slidesData.length) newIndex = 0;
+                    updateSlide(newIndex, 'next');
+                    resetAutoTimer();
+                }
+
+                function prevSlide() {
+                    if (isTransitioning) return;
+                    let newIndex = currentIndex - 1;
+                    if (newIndex < 0) newIndex = slidesData.length - 1;
+                    updateSlide(newIndex, 'prev');
+                    resetAutoTimer();
+                }
+
+
+                function startAutoPlay() {
+                    if (autoTimer) clearInterval(autoTimer);
+                    autoTimer = setInterval(() => {
+                        if (!isTransitioning) {
+                            nextSlide();
+                        }
+                    }, 4000);
+                }
+
+                function resetAutoTimer() {
+                    if (autoTimer) {
+                        clearInterval(autoTimer);
+                        startAutoPlay();
+                    }
+                }
+
+
+                if ($prevBtn) $prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    prevSlide();
+                });
+                if ($nextBtn) $nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    nextSlide();
+                });
+
+
+                let touchStartX = 0;
+                let touchEndX = 0;
+                $banner.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                $banner.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    const delta = touchEndX - touchStartX;
+                    if (Math.abs(delta) > 50) {
+                        if (delta > 0) {
+                            prevSlide();
+                        } else {
+                            nextSlide();
+                        }
+                        resetAutoTimer();
+                    }
+                });
+
+
+                function initCarousel() {
+                    preloadGalleryImages();
+                    buildDots();
+
+
+                    const firstSlide = slidesData[0];
+                    const gradient = "linear-gradient(to top, rgba(46, 49, 65, 0.7), rgba(46, 49, 65, 0.0))";
+                    $banner.style.setProperty('background-image', `${gradient}, url("${firstSlide.bgImage}")`, 'important');
+                    $banner.style.setProperty('background-size', 'auto, cover', 'important');
+                    $banner.style.setProperty('background-position', 'center, center', 'important');
+
+
+                    currentIndex = 0;
+                    updateDotsActive(0);
+                    startAutoPlay();
+                }
+
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initCarousel);
+                } else {
+                    window.addEventListener('load', function () {
+                        setTimeout(function () {
+                            initCarousel();
+                        }, 100);
+                    });
+                }
+
+
+                if ($banner) {
+                    $banner.addEventListener('mouseenter', () => {
+                        if (autoTimer) clearInterval(autoTimer);
+                    });
+                    $banner.addEventListener('mouseleave', () => {
+                        startAutoPlay();
+                    });
+                }
+            })();
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
